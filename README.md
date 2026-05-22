@@ -27,3 +27,5 @@ Semicolons are optional in Python. You can write multiple statements on one line
 ``` python
     print("Hello"); print("How are you?"); print("Bye bye!")
 ```
+
+**Python prints on a new line by default.**
