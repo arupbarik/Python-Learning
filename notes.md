@@ -17,7 +17,7 @@
 
 ``` python
     if 5 > 2:
-     print("Five is greater than two!")
+    print("Five is greater than two!")
 ```
 
 Semicolons are optional in Python. You can write multiple statements on one line by separating them with ; but this is rarely used because it makes it hard to read:
