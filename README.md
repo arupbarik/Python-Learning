@@ -1,3 +1,7 @@
+# WELCOME TO PYTHON LEARNING
+
+`print("Hello World!")`
+
 # Some imp points
 * Indentation refers to the spaces at the beginning of a code line.
 
@@ -54,7 +58,7 @@ You can combine text and numbers in one output by separating them with a comma:
 ```
 # Variables
 - Variables are case sensitive 
-- To print text/string we can use " or '.
+- To print text/string we can use `"` or `'`.
 ```python
    x = "John"
    # is the same as
@@ -62,7 +66,7 @@ You can combine text and numbers in one output by separating them with a comma:
 ```
 - With the help of `type()` function we can see the variable assign data type.
 
-**You can also use the + operator to output multiple variables:**
+**You can also use the `+` operator to output multiple variables:**
 ```python
    x = "Python "
    y = "is "
@@ -74,12 +78,17 @@ You can combine text and numbers in one output by separating them with a comma:
 
 **Converting between types**
 
-`int("42")`            <!-- → 42      (string to int) -->   
+`int("42")`            <!-- → 42      (string to int) -->
+
 `float("3.14")`        <!-- → 3.14 -->
+
 `str(100)`             <!-- '100' -->
+
 `bool(0)`              <!-- → False   (0 is falsy, anything else is True) -->
 
+
 `x=10**100`
+
 `print(x)`  
 * it is 10 to the power 100
 
@@ -108,10 +117,40 @@ You can combine text and numbers in one output by separating them with a comma:
 
 - `tuple` -> An ordered, immutable collection. Once created, you cannot change its elements.
 
+# I/O operations
 
+**Input**
 
+- To take input use `input()`.
+- by default `input()` returns string so we need to change its types manually.
 
+```python
+   age=int(input("enter ur age: "))
+   #for string we dont have to define the data type
+```
+**Output**
 
+- To print any thint one display we use `print()`.
+- `sep` and `end` are some extra parameters we can use in `print()`.
+- We also use f-string to print diff data types in one line.
+```python
+   name="Soul"
+   age=20
+   percentage=79.367256
+   print(f"my name is {name} and age is {age} also {percentage:.2f}")
+```
+- The pattern inside `{}` is always: `{value:format_spec}`. 
+- Refer `format_spec` table for better under standing.
+- use triple `'''`/`"""` quoates for print multiple strings in one print statement
+```python
+print(f"""
+--- Report Card ---
+Student  : {name}
+Marks    : {marks:.1f} / 100
+Grade    : {grade}
+Result   : {"PASS" if marks >= 40 else "FAIL"}
+""")
+```
 
 
 
