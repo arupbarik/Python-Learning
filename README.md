@@ -7,6 +7,12 @@
 
 * The number of spaces is up to you as a programmer, the most common use is four, but it has to be at least one.
 
+- **A Module is a single file containing Python code (functions, classes, variables). For example, if you create a file called math_utils.py, that file is a module.**
+
+- Library is a collection of **Modules.**
+
+- pip is a package manager to install modules,libraries,framwork etc.
+
 # Example
 
 ``` python
@@ -20,7 +26,7 @@
     print("Five is greater than two!")
 ```
 
-***Semicolons are optional in Python. You can write multiple statements on one line by separating them with ; but this is rarely used because it makes it hard to read:***
+***Semicolons are optional in Python. You can write multiple statements on one line by separating them with `;` but this is rarely used because it makes it hard to read:***
 
 - example
 
@@ -31,7 +37,7 @@
 **Python prints on a new line by default.**
 
 **Print Without a New Line
-By default, the print() function ends with a new line.**
+By default, the `print()` function ends with a new line.**
 
 **If you want to print multiple words on the same line, you can use the end parameter:**
 
@@ -64,6 +70,21 @@ You can combine text and numbers in one output by separating them with a comma:
    print(x + y + z)
 ```
 
+**The // operator is important — in C, 7 / 2 gives 3 because both are ints. In Python, / always gives a float. Use // when you want integer division.**
+
+**Converting between types**
+
+`int("42")`            <!-- → 42      (string to int) -->   
+`float("3.14")`        <!-- → 3.14 -->
+`str(100)`             <!-- '100' -->
+`bool(0)`              <!-- → False   (0 is falsy, anything else is True) -->
+
+`x=10**100`
+`print(x)`  
+* it is 10 to the power 100
+
+# Data Types
+
 | Type | Examples |
 | --- | --- |
 | Text Type | str |
@@ -75,7 +96,26 @@ You can combine text and numbers in one output by separating them with a comma:
 | Binary Types | bytes, bytearray, memoryview |
 | None Type | NoneType |
 
-**The // operator is important — in C, 7 / 2 gives 3 because both are ints. In Python, / always gives a float. Use // when you want integer division.**
+- In Python, if a function doesn’t explicitly return anything, it returns `None` by default.
 
-**Casting**
+- `list` -> An ordered, mutable collection. Think of it like a dynamic array.
+<!-- * Key Features:
+          - Dynamic Size: You don’t need to declare the size upfront (unlike int arr[10] in C/Java). It grows/shrinks automatically.
+          - Mixed Types: You can store integers, strings, and even other lists in the same list.
+          - Mutable: You can change, add, or remove items after creation. -->
+
+- `dict` -> A collection of key-value pairs. It’s implemented as a hash map under the hood.
+
+- `tuple` -> An ordered, immutable collection. Once created, you cannot change its elements.
+
+
+
+
+
+
+
+
+
+
+
 
