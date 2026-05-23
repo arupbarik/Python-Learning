@@ -1,7 +1,6 @@
 # WELCOME TO PYTHON LEARNING
 
 `print("Hello World!")`
-
 # Some imp points
 * Indentation refers to the spaces at the beginning of a code line.
 
@@ -16,7 +15,6 @@
 - Library is a collection of **Modules.**
 
 - pip is a package manager to install modules,libraries,framwork etc.
-
 # Example
 
 ``` python
@@ -49,7 +47,6 @@ By default, the `print()` function ends with a new line.**
     print("Hello World!", end=" ")
     print("I will print on the same line.")
 ```
-
 # Mix Text and Numbers
 You can combine text and numbers in one output by separating them with a comma:
 
@@ -91,7 +88,6 @@ You can combine text and numbers in one output by separating them with a comma:
 
 `print(x)`  
 * it is 10 to the power 100
-
 # Data Types
 
 | Type | Examples |
@@ -116,7 +112,6 @@ You can combine text and numbers in one output by separating them with a comma:
 - `dict` -> A collection of key-value pairs. It’s implemented as a hash map under the hood.
 
 - `tuple` -> An ordered, immutable collection. Once created, you cannot change its elements.
-
 # I/O operations
 
 **Input**
@@ -198,8 +193,69 @@ match day:
     case 7:
         print("sunday")
 ```
-
 # Loops
+
+**while loop**
+
+- We have to initialize the variable before the loop.
+- In `while` loop the loop will run until the condition is true.
+- We have to increament the variable separetly.
+- `else` is used to do something after the loop is finished.
+
+```python
+i=0
+while i<5:
+    print("hello")
+    i+=1
+else:
+    print("--------------")
+```
+
+**for loop**
+
+- We don't have to initialize the variable before the loop.
+- We don't have to increament the variable separetly it will do automatically.
+- We can iterate over a list, string or range.
+- It use `range()` to iterate over a range. It is typically starts from 0 and increament +1.
+- If it is iterate over a list it's iteration no. is the elements present in the list.
+- `else` is used to do something after the loop is finished.
+
+```python
+for x in range(5):
+    print(x) # 0 to 4.
+else:
+    print("--------------")
+for x in range(2,10):
+    print(x) # it starts from 2 and goes to value 10 and loop will run upto 9 but after gaining 10 it will not run.
+else:
+    print("--------------")
+for x in range(2,20,4):
+    print(x)  # it starts from 2 and goes to value 20 and increament +4.
+else:
+    print("--------------")
+for x in range(20,0,-4):
+    print(x) # it starts from 20 and goes to value 0 and increament -4.
+else:
+    print("--------------")
+for y in "apple":
+    print(y)  # it will print each alphabet.
+else:
+    print("--------------")
+```
+
+***Example***
+
+```python
+# print only odd numbers in a range
+for z in range(10):
+    if z%2==0:
+        continue
+    else:
+        print(z)
+else:
+    print("--------------")
+```
+# Functions
 
    
 
