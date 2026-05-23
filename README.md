@@ -151,7 +151,57 @@ Grade    : {grade}
 Result   : {"PASS" if marks >= 40 else "FAIL"}
 """)
 ```
+# Conditionals
 
+**if/elif/else statement**
+
+- We can use `if/elif/else` statements to check multiple condition.
+- `elif` is used for next condition to be check after `if` condition fails.
+- if every things fail the `else` will run.
+- there is also nested `if` also.
+
+```python
+    print("Enter num")
+    a=int(input())
+    b=int(input())
+    c=int(input())
+    if a>b and a>c:
+        print(f"{a} is greater among {a} {b} {c}")
+    elif b>c:
+        print(f"{b} is greater among {a} {b} {c}")
+    elif a==b==c:
+        print("All are equal")
+    else:
+        print(f"{c} is greater among {a} {b} {c}")
+```
+
+**match statement**
+
+- it is use when u know the outcomes.
+- when u compare over only one parameter.
+- it is better than use multiple `if/elif`.
+
+```python
+match day:
+    case 1:
+        print("Monday")
+    case 2:
+        print("tuesday")
+    case 3:
+        print("wedsnes day")
+    case 4:
+        print("thrusday")
+    case 5:
+        print("friday")
+    case 6:
+        print("saturday")
+    case 7:
+        print("sunday")
+```
+
+# Loops
+
+   
 
 
 
