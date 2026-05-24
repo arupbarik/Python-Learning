@@ -257,6 +257,9 @@ else:
 ```
 # Functions
 
+- In python we don't have to define return type and function type.
+- use only `def` and it handles all automatically.
+
    
 
 
