@@ -259,6 +259,38 @@ else:
 
 - In python we don't have to define return type and function type.
 - use only `def` and it handles all automatically.
+- Functions can send data back to the code that called them using the `return` statement.
+- When a function reaches a `return` statement, it stops executing and sends the result back.
+- If a function doesn't have a `return` statement, it returns `None` by default.
+- You can assign default values to parameters. If the function is called without an argument, it uses the default value.
+- By default, a function must be called with the correct number of arguments.
+- You can send arguments with the `key = value syntax.` This way, with keyword arguments, the order of the arguments does not matter.
+- When you call a function with arguments without using keywords, they are called positional arguments.
+- You can send any data type as an argument to a function (string, number, list, dictionary, etc.).
+- Functions can `return` any data type, including lists, tuples, dictionaries, and more.
+- In position argument u have to keep in mind the order.
+- sometimes you may not know how many arguments that will be passed into your function.
+- `*args` and `**kwargs` allow functions to accept a unknown number of arguments.
+- If you do not know how many arguments will be passed into your function, add a `*`before the parameter name. then it recives a tuple of arguments and can be access accordingly.
+- You can combine regular parameters with `*args`.
+- Regular parameters must come before `*args`.
+- If you do not know how many keyword arguments will be passed into your function, add two asterisks `**` before the parameter name.
+- This way, the function will receive a dictionary of arguments and can access the items accordingly
+- You can combine regular parameters with `*kargs`.
+- Regular parameters must come before `*kargs`.
+- You can use both `*args` and `**kwargs` in the same function.
+
+*The order must be:*
+
+1. regular parameters
+2. *args
+3. **kwargs
+- Use `*` and `**` in function definitions to collect arguments, and use them in function calls to unpack arguments.
+
+```pyton
+
+
+
 
    
 
