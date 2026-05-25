@@ -319,7 +319,35 @@ def my_Function(username, **details):
 my_Function("emil123", age = 25, city = "Oslo", hobby = "coding")
 ```
 
+**Recursion**
+- Recursion is when a function calls itself.
+- It is it self acts like a loop in function.
+- Every recursive function must have two parts:
 
+- A `recursive case` - The function calling itself with a modified argument
+- A `base case` - A condition that stops the recursion
+- 
+- Python has a limit on how deep recursion can go. The default limit is usually around 1000 recursive calls.
+- If you need deeper recursion, you can increase the limit, but be careful as this can cause crashes
+
+```python
+print("Recursion")
+
+def factorial(n):
+  # Base case
+  if n == 0 or n == 1:
+    return 1
+  # Recursive case
+  else:
+    return n * factorial(n - 1)
+
+print(factorial(5))
+# it is for check the limit of recursion
+import sys
+print(sys.getrecursionlimit())
+sys.setrecursionlimit(2000) # this code extend the calls to 2000.
+```
+# Lists
 
    
 
