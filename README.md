@@ -280,8 +280,8 @@ else:
 - Regular parameters must come before `*args`.
 - If you do not know how many keyword arguments will be passed into your function, add two asterisks `**` before the parameter name.
 - This way, the function will receive a dictionary of arguments and can access the items accordingly
-- You can combine regular parameters with `*kargs`.
-- Regular parameters must come before `*kargs`.
+- You can combine regular parameters with `**kargs`.
+- Regular parameters must come before `**kargs`.
 - You can use both `*args` and `**kwargs` in the same function.
 
 *The order must be:*
