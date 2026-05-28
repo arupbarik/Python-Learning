@@ -201,6 +201,7 @@ match day:
 - In `while` loop the loop will run until the condition is true.
 - We have to increament the variable separetly.
 - `else` is used to do something after the loop is finished.
+- The `else` block in a `while` loop executes only if the loop did NOT break.
 
 ```python
 i=0
