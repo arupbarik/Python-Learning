@@ -6,8 +6,9 @@ print(2**3)
 
 # What’s the difference between == and is?
 x=55
-print(x==55) # it checks the equality 
-print(x is 55) # it check if the assign value is 55 or not.
+y=55
+print(x==y) # checks if the values are equal.
+print(x is y) # checks if two variables point to the exact same object in memory.
 
 # Write a condition that checks if a number is between 1 and 10 (inclusive).
 print("please give to number to checks if a number is between 1 and 10 (inclusive)")
