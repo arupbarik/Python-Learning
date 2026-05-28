@@ -147,6 +147,9 @@ Result   : {"PASS" if marks >= 40 else "FAIL"}
 """)
 ```
 # Conditionals
+**Ternary operator**
+- ternary operator is nothing but using conditional statement in one line.
+- value_if_true `if` condition `else` value_if_false
 
 **if/elif/else statement**
 

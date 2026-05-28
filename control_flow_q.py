@@ -38,4 +38,5 @@ while 1:
 ans- Refer to readme for answer.'''
 
 # Convert this if-else to a ternary operator: if x > 0: msg = "positive" else: msg = "non-positive"
-
+# ternary operator is nothing but using conditional statement in one line.
+# it is frequently use in in simple logic in production.
