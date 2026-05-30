@@ -365,10 +365,12 @@ empty=[]
 - List items are ordered, changeable, and allow duplicate values.
 - List items are indexed, the first item has index `[0]`, the second item has index `[1]` etc.
 - To determine how many items a list has, use the `len()` function.
+- we can count no. of occurance in a list with the help of `.count()` method.
 
 ```python
 print(len(num))
 print(type(num))
+print(num.count(6))
 ```
 - Python has negative indexing which starts from `[-1]`. It means the last element of the list.
 
@@ -436,3 +438,93 @@ print(len(nums))
 
 ```
 **List comprehension**
+- A list comprehension builds a new list in a single readable line.
+- The pattern: `[expression for item in iterable if condition]`.
+
+```python
+# List comprehension
+ums=[85,8,96,5,89,56]
+square=[x ** 2 for x in ums]
+print(square)
+```
+- We can nest them — useful for 2D grids (replaces nested loops).
+`table = [[i * j for j in range(1, 6)] for i in range(1, 6)]`
+**Sort list**
+- List objects have a sort() method that will sort the list alphanumerically, ascending, by default.
+- To sort descending, use the keyword argument `reverse = True`      
+- We can also customize your own function by using the keyword argument `key = function`.
+- The `key` parameter is one of the most powerful features in Python sorting. It allows you to tell Python how to compare items,rather than just using their default value.
+- The `reverse()` method reverses the current sorting order of the elements.
+- By default the `sort()` method is case sensitive, resulting in all capital letters being sorted before lower case letters.
+- Luckily we can use built-in functions as key functions when sorting a list.
+- So if we want a case-insensitive sort function, use `str.lower` as a key function.
+
+```python
+# sort list
+numb=[2,8,9,6,4,1,0,6]
+print(numb)
+print(len(numb))
+
+numb.sort()
+print(numb)
+
+numb.sort(reverse=True)
+print(numb)
+
+numb=[2,8,9,6,4,1,0,6]
+numb.reverse()
+print(numb)
+
+def get(n):
+    return abs(n-10)
+
+numm=[5,7,8,9,24,9,2,5]
+print(numm)
+
+numm.sort(key=abs) # sort according to their absolute value
+print(numm)
+
+fruit=["apple","guava","banana","grape","mango"]
+fruit.sort(key=len) # sort according to their lengths
+print(fruit)
+
+numm.sort(key=get)
+print(numm)
+```
+**Copy list**
+- You cannot copy a list simply by typing `list2 = list1`, because: `list2` will only be a reference to `list1`, and changes made in `list1` will automatically also be made in `list2`.
+- You can use the built-in List method `copy()` to copy a list.
+- Another way to make a copy is to use the built-in method `list()`.
+- You can also make a copy of a list by using the `:` (slice) operator.
+
+```python
+cube=[x**3 for x in range(5)]
+print(cube,len(cube))
+
+c1=cube.copy()
+print(c1)
+
+c2=list(cube)
+print(c2)
+
+c3=cube[:]
+print(c3)
+```
+**Join lists**
+- One of the easiest ways are to join lists by using the `+` operator.
+- you can use the `extend()` method, where the purpose is to add elements from one list to another list.
+- we can use `append()` also.
+
+```python
+new_list=c1+cube
+print(new_list) #or
+
+cube.extend(c1)  #or
+print(cube)
+for x in c1:
+    cube.append(x)  
+print(cube)
+```
+# Tuples
+
+
