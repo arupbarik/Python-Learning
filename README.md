@@ -399,6 +399,40 @@ print(fruits[::-1]) # Reversed list print
 - The `clear()` method empties the list.
 
 ```python
+# modification
+nums=[1,2,3,9,4,6,85,8,96,5,89,56]
+
+print(nums)
+print(len(nums))
+
+nums.append(100)
+print(nums)
+print(len(nums))
+
+nums.insert(1,10)
+print(nums)
+print(len(nums))
+
+nums.remove(56)
+print(nums)
+print(len(nums))
+
+remove_item=nums.pop(11)
+print(nums)
+print(len(nums))
+print(remove_item)
+
+# nums.pop()
+# print(nums)  # it will remove the last element of the list
+# print(len(nums))
+
+del nums[11]
+print(nums)
+print(len(nums))
+
+nums.clear()
+print(nums)
+print(len(nums))
 
 ```
 **List comprehension**
