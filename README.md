@@ -353,10 +353,52 @@ sys.setrecursionlimit(2000) # this code extend the calls to 2000.
 ```
 # Lists
 
-   
+- it kind of a dynamic array. It grows and shrinks automatically. no need to declare the size.
+- We can store multiple data type in one list.
+- It can be empty list.
 
+```python
+num=[1,2,3,4,5] #dynamic size
+mixed=[1,"hello",2,3]
+empty=[]
+```
+- List items are ordered, changeable, and allow duplicate values.
+- List items are indexed, the first item has index `[0]`, the second item has index `[1]` etc.
+- To determine how many items a list has, use the `len()` function.
 
+```python
+print(len(num))
+print(type(num))
+```
+- Python has negative indexing which starts from `[-1]`. It means the last element of the list.
 
+```python
+print(num[1])
+print(num[-1])
+```
+**Slicing**
+- where it gets powerful.
+- the pattern is `[start:stop:step]`.
 
+```python
+fruits=["apple","guava","banana","grape","mango"]
+print(fruits[1:4]) # prints index 1 to 3
+print(fruits[:5]) # print from start to 4 no. index
+print(fruits[:]) # prints whole list
+print(fruits[::2]) # prints with two increament in index
+print(fruits[::-1]) # Reversed list print
+```
+**Modifying**
+- To insert a new list item, without replacing any of the existing values, we can use the `insert()` method.
+- To add an item to the end of the list, use the `append()` method.
+- To append elements from another list to the current list, use the `extend()` method.
+- The `remove()` method removes the specified item.
+- If there are more than one item with the specified value, the `remove()` method removes the first occurrence.
+- The `pop()` method removes the specified index and return the value and we can save it in a variable. *If you do not specify the index, the `pop()` method removes the last item.*
+- The `del` keyword also removes the specified index but it throws away the value forever.*The `del` keyword can also delete the list completely.*
+- The `clear()` method empties the list.
 
+```python
 
+```
+**List comprehension**
