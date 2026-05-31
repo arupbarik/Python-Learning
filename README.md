@@ -603,4 +603,67 @@ new1=tuple1*2
 print(new1)
 ```
 # Dictionaries
+- Dictionaries are used to store data values in `key:value` pairs.
+- Dictionary items are ordered, changeable, and do not allow duplicates.
+- Dictionaries are written with curly brackets, and have keys and values.
+- They can be referred to by using the key name.
+- Dictionaries cannot have two items with the same key.
+- To determine how many items a dictionary has, use the `len()` function.
+- It is also possible to use the `dict()` constructor to make a dictionary.
+- You can access the items of a dictionary by referring to its key name, inside square brackets
+- There is also a method called `get()` that will help to access the dictionary.
+- The `keys()` method will return a list of all the keys in the dictionary.
+- The list of the keys is a view of the dictionary, meaning that any changes done to the dictionary will be reflected in the keys list.
+- The `values()` method will return a list of all the values in the dictionary.
+- The list of the values is a view of the dictionary, meaning that any changes done to the dictionary will be reflected in the values list.
+- The `items()` method will return each item in a dictionary, as tuples in a list.
+- The returned list is a view of the items of the dictionary, meaning that any changes done to the dictionary will be reflected in the items list.
+- To determine if a specified key is present in a dictionary use the `in` keyword.
+```python
+print("Dictionaries")
+
+student={
+    "name":"john",
+    "age":18,
+    "SGPA":8
+}
+empty={}
+also_empty=dict()
+print(student["name"])
+
+student["name"]="alice"
+print(student["name"])
+print(len(student))
+print(type(student))
+
+new=dict(name="Dhoni",team="CSK")
+print(new["name"])
+
+x=new.get("team")
+print(x)
+
+#Before chnage
+x=new.keys()
+print(x)
+
+#after change
+new["num"]=7
+x=new.keys()
+print(x)
+
+#Before chnage
+x=new.values()
+print(x)
+
+#after change
+new["num"]=7.0
+x=new.values()
+print(x)
+
+print(new.items())
+
+if "num" in new:
+    print("YES")
+```
+**Modification**
 - 
