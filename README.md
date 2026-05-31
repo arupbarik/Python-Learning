@@ -781,3 +781,27 @@ print(greet[:])
 print(greet[::-1])
 ```
 **Methods**
+- `upper()` method give u all uppercase charecter.
+- `lower()` method give u all lowercase charecter.
+- `capitalized()` method give u only first letter uppercase.
+- `title()` method give u title like charecter.
+- `swapcase()` method give u only first letter lowercase charecter.
+- `find()` serches for the char in the string.
+- `index()` return the index num.
+- `startswith()` and `endswith()` and `isdigit()` some bollean condition.
+- `strip()` used to remove the withspaces at the end aand start
+- `split()` used to separeate with some argument.
+- `replace()` used to replace char with the another char.
+- .zfills (5)
+```python
+# Methods
+s="hello,arbaa"
+print(s)
+
+print(s.upper())
+
+print(s.index("l"))
+
+s.replace("l","v")
+print(s)
+```

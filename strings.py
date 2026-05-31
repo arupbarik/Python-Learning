@@ -19,3 +19,12 @@ print(greet[:])
 print(greet[::-1])
 
 # Methods
+s="hello,arbaa"
+print(s)
+
+print(s.upper())
+
+print(s.index("l"))
+
+s.replace("l","v")
+print(s)
