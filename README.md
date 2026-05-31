@@ -755,4 +755,28 @@ for x, obj in myfamily.items():
 ```
 # Sets
 # Strings
-- 
+- Strings are immutable — you can read but not write.
+- We can write string with the help of `'` or `"`.
+- Since strings are sequences, everything from the lists lesson applies directly. mostly the slicing part.
+```python
+print("Strings")
+
+a="hello"
+b='world'
+print(a+" "+b)
+
+print(a[2])
+for x in a:
+    print (x)
+
+# Slicing
+greet="Hello,World!"
+print(greet[2:6])
+print(greet[2:9])
+print(greet[:6])
+print(greet[2:6:2])
+print(greet[::3])
+print(greet[:])
+print(greet[::-1])
+```
+**Methods**
