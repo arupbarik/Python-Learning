@@ -449,6 +449,7 @@ print(square)
 ```
 - We can nest them — useful for 2D grids (replaces nested loops).
 `table = [[i * j for j in range(1, 6)] for i in range(1, 6)]`
+
 **Sort list**
 - List objects have a sort() method that will sort the list alphanumerically, ascending, by default.
 - To sort descending, use the keyword argument `reverse = True`      
