@@ -526,5 +526,81 @@ for x in c1:
 print(cube)
 ```
 # Tuples
+- Tuples are used to store multiple items in a single variable.
+- A tuple is a collection which is ordered and unchangeable.
+- Tuples are written with round brackets `()`.
+- Tuple items are ordered, unchangeable, and allow duplicate values.
+- The index is same as list or array.
+- When we say that tuples are ordered, it means that the items have a defined order, and that order will not change.
+- To determine how many items a tuple has, use the `len()` function.
+- To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
+- It is also possible to use the `tuple()` constructor to make a tuple.
+- accessing tuples is same as lists.
+```python
+print("Tuples")
+point=(2,3)
+print(point)
+mixed=(1,2,"apple",5)
+fruit=("apple","grape","mango","guaava")
+order=tuple((1,2,3))
+print(fruit,len(fruit),type(fruit))
+```
+**Update tuple**
+- we can't update tuples due to they are unchangable.
+- we can add two tuples.
+- it can be update via changing it into a list and covert it again tuple after update.
+- we can apply every list function and method after converted the tuples into lists.
+```python
+# update the tuple
+points=(2,5,6)
 
+y=list(points)
+print(y)
+y.append(5)
+y.insert(3,8)
+print(y)
 
+points=tuple(y)
+print(points)
+
+point=(2,3)
+points+=point
+print(points)
+```
+**Unpacking**
+- When we create a tuple, we normally assign values to it. This is called "packing" a tuple.
+- In Python, we are also allowed to extract the values back into variables. This is called "unpacking".
+- If the number of variables is less than the number of values, you can add an `*` to the variable name and the values will be assigned to the variable as a list.
+- *If the asterisk is added to another variable name than the last, Python will assign values to the variable until the number of values left matches the number of variables left.*
+
+```python
+# Unpacking
+num=(125,58,71)
+(r,g,b)=num
+print(r)
+print(g)
+print(b)
+
+cricket_player = ("Virat Kohli", "Batsman", "Right-hand bat", "India")
+print(cricket_player)
+(name,*details,country)=cricket_player
+print(name)
+print(details)
+print(country)
+```
+**Join tuples**
+- To join two or more tuples you can use the `+` operator.
+- If you want to multiply the content of a tuple a given number of times, you can use the `*` operator.
+```python
+#join two tuples
+tuple1=(1,2,3)
+tuple2=(4,5,6)
+
+new=tuple1+tuple2
+print(new)
+
+new1=tuple1*2
+print(new1)
+```
+# Dictionaries
+- 
