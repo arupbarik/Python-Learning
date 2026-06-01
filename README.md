@@ -836,4 +836,31 @@ with open("files.txt") as f:
     print(f.read())
 ```
 **Write a file**
-- 
+```python
+# Write a file
+with open("files.txt", "a") as f:
+    f.write("now a line.")
+
+with open("files.txt") as f:
+    print(f.read())
+
+with open("files.txt", "w") as f:    # it overwrites the file content
+    f.write("hmmm")
+with open("files.txt") as f:
+    print(f.read())
+```
+**Create and Remove a file**
+- To delete a file, you must import the OS module, and run its `os.remove()` function.
+- To delete an entire folder, use the `os.rmdir()` method.
+- To avoid getting an error, you might want to check if the file exists before you try to delete it:
+```python
+import os
+if os.path.exists("demofile.txt"):
+  os.remove("demofile.txt")
+else:
+  print("The file does not exist")
+```
+- `"x"` - Create - will create a file, returns an error if the file exists.<br>
+`f = open("myfile.txt", "x")`
+
+# OOPs
