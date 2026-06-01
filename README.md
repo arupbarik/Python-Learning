@@ -789,10 +789,10 @@ print(greet[::-1])
 - `find()` serches for the char in the string.
 - `index()` return the index num.
 - `startswith()` and `endswith()` and `isdigit()` some bollean condition.
-- `strip()` used to remove the withspaces at the end aand start
+- `strip()` used to remove the withspaces at the end aand start.
 - `split()` used to separeate with some argument.
 - `replace()` used to replace char with the another char.
-- .zfills (5)
+- `.zfills()` used to put zeros at starting.
 ```python
 # Methods
 s="hello,arbaa"
@@ -805,3 +805,35 @@ print(s.index("l"))
 s.replace("l","v")
 print(s)
 ```
+# File Handling
+- File handling is an important part of any web application.
+- Python has several functions for creating, reading, updating, and deleting files.
+- The key function for working with files in Python is the `open()` function.
+- The `open()` function takes two parameters; filename, and mode.
+- `"r"` - Read - Default value. Opens a file for reading, error if the file does not exist.
+- `"a"` - Append - Opens a file for appending, creates the file if it does not exist.
+- `"w"` - Write - Opens a file for writing, creates the file if it does not exist.
+- `"x"` - Create - Creates the specified file, returns an error if the file exists.
+- `"t"` - Text - Default value. Text mode.
+- `"b"` - Binary - Binary mode (e.g. images).
+**Read a file**
+- Because `"r"` for read, and `"t"` for text are the default values, you do not need to specify them.
+- To read again from the start, you must reset the cursor using `f.seek(0)`.
+- Use `f.close()` to close the file every time u open it if u are not useing the `with` statement.
+- You can also use the `with` statement when opening a file. then dont need to close the file it will handle automatically.
+```python
+print("File Handling")
+
+# Read a file
+f=open("files.txt")
+print(f.read())
+f.seek(0)
+print(f.readline())
+f.seek(0)
+print(f.readlines(),type(f.readlines()))
+f.close()
+with open("files.txt") as f:
+    print(f.read())
+```
+**Write a file**
+- 
