@@ -755,23 +755,51 @@ for x, obj in myfamily.items():
     print(y + ':', obj[y])
 ```
 # Sets
-# Strings
-- Strings are immutable — you can read but not write.
-- We can write string with the help of `'` or `"`.
-- Since strings are sequences, everything from the lists lesson applies directly. mostly the slicing part.
-```python
-print("Strings")
+- Sets are used to store multiple items in a single variable, but unlike lists they are **unordered**, **unindexed**, and **do not allow duplicates**.
+- Sets are written with curly brackets `{}`.
+- Set items can appear in a different order every time you use them, and cannot be referred to by index or key.
+- Once a set is created, you cannot change its items, but you can add or remove items.
+- Duplicate values are silently ignored.
 
-a="hello"
-b='world'
-print(a+" "+b)
+```python
+# Creating sets
+fruits = {"apple", "banana", "cherry"}
+nums = {1, 2, 3, 3, 2}  # duplicates removed automatically
+print(nums)              # {1, 2, 3}
+print(len(fruits))
+
+# Check membership
+print("apple" in fruits)
+
+# Add / remove
+fruits.add("mango")
+fruits.discard("banana")  # safe: no error if item doesn't exist
+fruits.remove("cherry")   # raises KeyError if not found
+
+# Set operations
+a = {1, 2, 3, 4}
+b = {3, 4, 5, 6}
+print(a | b)   # union             → {1, 2, 3, 4, 5, 6}
+print(a & b)   # intersection      → {3, 4}
+print(a - b)   # difference        → {1, 2}
+print(a ^ b)   # symmetric diff    → {1, 2, 5, 6}
+```
+
+# Strings
+- Strings are **immutable** — you can read but not modify in place.
+- We can write strings with `'` or `"`.
+- Since strings are sequences, everything from the lists lesson applies directly — especially slicing.
+```python
+a = "hello"
+b = 'world'
+print(a + " " + b)
 
 print(a[2])
 for x in a:
-    print (x)
+    print(x)
 
 # Slicing
-greet="Hello,World!"
+greet = "Hello,World!"
 print(greet[2:6])
 print(greet[2:9])
 print(greet[:6])
@@ -781,29 +809,30 @@ print(greet[:])
 print(greet[::-1])
 ```
 **Methods**
-- `upper()` method give u all uppercase charecter.
-- `lower()` method give u all lowercase charecter.
-- `capitalized()` method give u only first letter uppercase.
-- `title()` method give u title like charecter.
-- `swapcase()` method give u only first letter lowercase charecter.
-- `find()` serches for the char in the string.
-- `index()` return the index num.
-- `startswith()` and `endswith()` and `isdigit()` some bollean condition.
-- `strip()` used to remove the withspaces at the end aand start.
-- `split()` used to separeate with some argument.
-- `replace()` used to replace char with the another char.
-- `.zfills()` used to put zeros at starting.
+- `upper()` — all uppercase characters.
+- `lower()` — all lowercase characters.
+- `capitalize()` — only the first letter uppercase.
+- `title()` — first letter of every word uppercase.
+- `swapcase()` — swaps case of every character.
+- `find()` — searches for a substring; returns -1 if not found.
+- `index()` — returns the index of the first match; raises `ValueError` if not found.
+- `startswith()`, `endswith()`, `isdigit()` — boolean checks.
+- `strip()` — removes leading and trailing whitespace.
+- `split()` — splits string into a list by a separator.
+- `replace(old, new)` — returns a **new** string; must reassign since strings are immutable.
+- `zfill(width)` — pads with leading zeros.
+
 ```python
 # Methods
-s="hello,arbaa"
+s = "hello,arbaa"
 print(s)
 
 print(s.upper())
-
 print(s.index("l"))
 
-s.replace("l","v")
-print(s)
+# ⚠️ replace() returns a NEW string — must reassign!
+s = s.replace("l", "v")
+print(s)  # "hevvo,arbaa"
 ```
 # File Handling
 - File handling is an important part of any web application.
@@ -819,48 +848,96 @@ print(s)
 **Read a file**
 - Because `"r"` for read, and `"t"` for text are the default values, you do not need to specify them.
 - To read again from the start, you must reset the cursor using `f.seek(0)`.
-- Use `f.close()` to close the file every time u open it if u are not useing the `with` statement.
-- You can also use the `with` statement when opening a file. then dont need to close the file it will handle automatically.
-```python
-print("File Handling")
+- Use `f.close()` to close the file every time you open it if you are not using the `with` statement.
+- You can also use the `with` statement when opening a file — it closes the file automatically.
 
+```python
 # Read a file
-f=open("files.txt")
+f = open("files.txt")
 print(f.read())
 f.seek(0)
 print(f.readline())
 f.seek(0)
-print(f.readlines(),type(f.readlines()))
+print(f.readlines(), type(f.readlines()))
 f.close()
+
 with open("files.txt") as f:
     print(f.read())
 ```
+
 **Write a file**
+
 ```python
-# Write a file
+# Append to a file
 with open("files.txt", "a") as f:
     f.write("now a line.")
 
 with open("files.txt") as f:
     print(f.read())
 
-with open("files.txt", "w") as f:    # it overwrites the file content
+# Overwrite a file
+with open("files.txt", "w") as f:  # overwrites the file content
     f.write("hmmm")
+
 with open("files.txt") as f:
     print(f.read())
 ```
+
 **Create and Remove a file**
 - To delete a file, you must import the OS module, and run its `os.remove()` function.
 - To delete an entire folder, use the `os.rmdir()` method.
-- To avoid getting an error, you might want to check if the file exists before you try to delete it:
+- To avoid getting an error, check if the file exists before deleting:
+
 ```python
 import os
+
 if os.path.exists("demofile.txt"):
-  os.remove("demofile.txt")
+    os.remove("demofile.txt")
 else:
-  print("The file does not exist")
+    print("The file does not exist")
 ```
 - `"x"` - Create - will create a file, returns an error if the file exists.<br>
 `f = open("myfile.txt", "x")`
 
-# OOPs
+# OOP (Object-Oriented Programming)
+
+- OOP is a programming paradigm that organizes code around **objects** — bundles of data (attributes) and behaviour (methods).
+- Python supports four core OOP principles: **Encapsulation**, **Inheritance**, **Polymorphism**, and **Abstraction**.
+- A **class** is a blueprint; an **object** is an instance of that blueprint.
+- Use `self` to refer to the current instance inside a class.
+- `__init__()` is the constructor — it runs automatically when an object is created.
+
+> 📝 *This section is a work in progress — `oop.py` coming soon!*
+
+```python
+# Defining a class
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name      # instance attribute
+        self.breed = breed
+
+    def bark(self):           # instance method
+        print(f"{self.name} says: Woof!")
+
+
+# Creating objects (instances)
+d1 = Dog("Bruno", "Labrador")
+d2 = Dog("Max", "Beagle")
+
+d1.bark()   # Bruno says: Woof!
+print(d2.name)
+
+# Inheritance
+class GuideDog(Dog):
+    def __init__(self, name, breed, owner):
+        super().__init__(name, breed)   # call parent constructor
+        self.owner = owner
+
+    def guide(self):
+        print(f"{self.name} is guiding {self.owner}.")
+
+
+g = GuideDog("Buddy", "Golden Retriever", "Alice")
+g.bark()    # inherited from Dog
+g.guide()
+```
