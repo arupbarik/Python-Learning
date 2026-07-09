@@ -1,943 +1,637 @@
-# WELCOME TO PYTHON LEARNING
+# Python Learning Documentation
 
-`print("Hello World!")`
-# Some imp points
-* Indentation refers to the spaces at the beginning of a code line.
+A complete, structured guide to learning Python from beginner to advanced level, with practical examples and a study path.
 
-* Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.
+## 1. What Is Python?
 
-* Python uses indentation to indicate a block of code.
+Python is a high-level, interpreted programming language known for:
+- Clear and readable syntax
+- Fast development speed
+- Rich standard library
+- Strong ecosystem for web, automation, data science, AI, scripting, and tooling
 
-* The number of spaces is up to you as a programmer, the most common use is four, but it has to be at least one.
+## 2. Why Learn Python?
 
-- **A Module is a single file containing Python code (functions, classes, variables). For example, if you create a file called math_utils.py, that file is a module.**
+Python is useful for:
+- Web development (Django, Flask, FastAPI)
+- Automation and scripting
+- Data analysis (Pandas, NumPy)
+- Machine learning and AI (scikit-learn, PyTorch, TensorFlow)
+- APIs and backend systems
+- DevOps and system tooling
 
-- Library is a collection of **Modules.**
+## 3. Setup and First Program
 
-- pip is a package manager to install modules,libraries,framwork etc.
-# Example
+Install Python 3 from the official site and verify:
 
-``` python
-    if 5 > 2:
-     print("Five is greater than two!")
-```
-# Wrong code
-
-``` python
-    if 5 > 2:
-    print("Five is greater than two!")
-```
-
-***Semicolons are optional in Python. You can write multiple statements on one line by separating them with `;` but this is rarely used because it makes it hard to read:***
-
-- example
-
-``` python
-    print("Hello"); print("How are you?"); print("Bye bye!")
+```bash
+python --version
+# or
+python3 --version
 ```
 
-**Python prints on a new line by default.**
+Run your first program:
 
-**Print Without a New Line
-By default, the `print()` function ends with a new line.**
-
-**If you want to print multiple words on the same line, you can use the end parameter:**
-
-``` python
-    print("Hello World!", end=" ")
-    print("I will print on the same line.")
-```
-# Mix Text and Numbers
-You can combine text and numbers in one output by separating them with a comma:
-
-``` python
-    print("I am", 35, "years old.")
-```
-# Variables
-- Variables are case sensitive 
-- To print text/string we can use `"` or `'`.
 ```python
-   x = "John"
-   # is the same as
-   x = 'John'
+print("Hello, World!")
 ```
-- With the help of `type()` function we can see the variable assign data type.
 
-**You can also use the `+` operator to output multiple variables:**
+## 4. Python Fundamentals
+
+### 4.1 Syntax and Indentation
+
+- Python uses indentation to define code blocks.
+- Standard indentation is 4 spaces.
+- Indentation is required, not optional.
+
 ```python
-   x = "Python "
-   y = "is "
-   z = "awesome"
-   print(x + y + z)
+if 5 > 2:
+    print("Five is greater than two")
 ```
 
-**The // operator is important — in C, 7 / 2 gives 3 because both are ints. In Python, / always gives a float. Use // when you want integer division.**
+### 4.2 Comments
 
-**Converting between types**
+```python
+# Single-line comment
 
-`int("42")`            <!-- → 42      (string to int) -->
+"""
+Multi-line comment style using a triple-quoted string.
+Usually used as a docstring.
+"""
+```
 
-`float("3.14")`        <!-- → 3.14 -->
+### 4.3 Variables and Naming
 
-`str(100)`             <!-- '100' -->
+- Variables are dynamically typed.
+- Names are case-sensitive.
+- Use snake_case for variables and functions.
 
-`bool(0)`              <!-- → False   (0 is falsy, anything else is True) -->
+```python
+name = "Arup"
+age = 20
+is_student = True
+```
 
+### 4.4 Data Types
 
-`x=10**100`
-
-`print(x)`  
-* it is 10 to the power 100
-# Data Types
-
-| Type | Examples |
+| Category | Types |
 | --- | --- |
-| Text Type | str |
-| Numeric Types | int, float, complex |
-| Sequence Types | list, tuple, range |
-| Mapping Type | dict |
-| Set Types | set, frozenset |
-| Boolean Type | bool |
-| Binary Types | bytes, bytearray, memoryview |
-| None Type | NoneType |
+| Text | str |
+| Numeric | int, float, complex |
+| Sequence | list, tuple, range |
+| Mapping | dict |
+| Set | set, frozenset |
+| Boolean | bool |
+| Binary | bytes, bytearray, memoryview |
+| Null | NoneType |
 
-- In Python, if a function doesn’t explicitly return anything, it returns `None` by default.
-
-- `list` -> An ordered, mutable collection. Think of it like a dynamic array.
-<!-- * Key Features:
-          - Dynamic Size: You don’t need to declare the size upfront (unlike int arr[10] in C/Java). It grows/shrinks automatically.
-          - Mixed Types: You can store integers, strings, and even other lists in the same list.
-          - Mutable: You can change, add, or remove items after creation. -->
-
-- `dict` -> A collection of key-value pairs. It’s implemented as a hash map under the hood.
-
-- `tuple` -> An ordered, immutable collection. Once created, you cannot change its elements.
-# I/O operations
-
-**Input**
-
-- To take input use `input()`.
-- by default `input()` returns string so we need to change its types manually.
+### 4.5 Type Conversion
 
 ```python
-   age=int(input("enter ur age: "))
-   #for string we dont have to define the data type
-```
-**Output**
-
-- To print any thint one display we use `print()`.
-- `sep` and `end` are some extra parameters we can use in `print()`.
-- We also use f-string to print diff data types in one line.
-```python
-   name="Soul"
-   age=20
-   percentage=79.367256
-   print(f"my name is {name} and age is {age} also {percentage:.2f}")
-```
-- The pattern inside `{}` is always: `{value:format_spec}`. 
-- Refer `format_spec` table for better under standing.
-- use triple `'''`/`"""` quoates for print multiple strings in one print statement
-```python
-print(f"""
---- Report Card ---
-Student  : {name}
-Marks    : {marks:.1f} / 100
-Grade    : {grade}
-Result   : {"PASS" if marks >= 40 else "FAIL"}
-""")
-```
-# Conditionals
-**Ternary operator**
-- ternary operator is nothing but using conditional statement in one line.
-- value_if_true `if` condition `else` value_if_false
-
-**if/elif/else statement**
-
-- We can use `if/elif/else` statements to check multiple condition.
-- `elif` is used for next condition to be check after `if` condition fails.
-- if every things fail the `else` will run.
-- there is also nested `if` also.
-
-```python
-    print("Enter num")
-    a=int(input())
-    b=int(input())
-    c=int(input())
-    if a>b and a>c:
-        print(f"{a} is greater among {a} {b} {c}")
-    elif b>c:
-        print(f"{b} is greater among {a} {b} {c}")
-    elif a==b==c:
-        print("All are equal")
-    else:
-        print(f"{c} is greater among {a} {b} {c}")
+x = int("42")
+y = float("3.14")
+z = str(100)
+b = bool(0)   # False
 ```
 
-**match statement**
-
-- it is use when u know the outcomes.
-- when u compare over only one parameter.
-- it is better than use multiple `if/elif`.
+### 4.6 Input and Output
 
 ```python
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+print(f"My name is {name} and I am {age} years old.")
+```
+
+Useful `print` arguments:
+- `sep`: separator between values
+- `end`: ending character instead of newline
+
+## 5. Operators
+
+### 5.1 Arithmetic
+`+`, `-`, `*`, `/`, `%`, `//`, `**`
+
+### 5.2 Comparison
+`==`, `!=`, `>`, `<`, `>=`, `<=`
+
+### 5.3 Logical
+`and`, `or`, `not`
+
+### 5.4 Assignment
+`=`, `+=`, `-=`, `*=`, `/=`, `//=`, `%=`
+
+### 5.5 Identity and Membership
+- Identity: `is`, `is not`
+- Membership: `in`, `not in`
+
+## 6. Control Flow
+
+### 6.1 if / elif / else
+
+```python
+score = 75
+
+if score >= 90:
+    grade = "A"
+elif score >= 75:
+    grade = "B"
+else:
+    grade = "C"
+```
+
+### 6.2 Ternary Expression
+
+```python
+status = "Adult" if age >= 18 else "Minor"
+```
+
+### 6.3 match-case (Python 3.10+)
+
+```python
+day = 2
+
 match day:
     case 1:
         print("Monday")
     case 2:
-        print("tuesday")
-    case 3:
-        print("wedsnes day")
-    case 4:
-        print("thrusday")
-    case 5:
-        print("friday")
-    case 6:
-        print("saturday")
-    case 7:
-        print("sunday")
+        print("Tuesday")
+    case _:
+        print("Invalid day")
 ```
-# Loops
 
-**while loop**
+## 7. Loops
 
-- We have to initialize the variable before the loop.
-- In `while` loop the loop will run until the condition is true.
-- We have to increament the variable separetly.
-- `else` is used to do something after the loop is finished.
-- The `else` block in a `while` loop executes only if the loop did NOT break.
+### 7.1 while loop
 
 ```python
-i=0
-while i<5:
-    print("hello")
-    i+=1
-else:
-    print("--------------")
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
 ```
 
-**for loop**
-
-- We don't have to initialize the variable before the loop.
-- We don't have to increament the variable separetly it will do automatically.
-- We can iterate over a list, string or range.
-- It use `range()` to iterate over a range. It is typically starts from 0 and increament +1.
-- If it is iterate over a list it's iteration no. is the elements present in the list.
-- `else` is used to do something after the loop is finished.
+### 7.2 for loop
 
 ```python
 for x in range(5):
-    print(x) # 0 to 4.
-else:
-    print("--------------")
-for x in range(2,10):
-    print(x) # it starts from 2 and goes to value 10 and loop will run upto 9 but after gaining 10 it will not run.
-else:
-    print("--------------")
-for x in range(2,20,4):
-    print(x)  # it starts from 2 and goes to value 20 and increament +4.
-else:
-    print("--------------")
-for x in range(20,0,-4):
-    print(x) # it starts from 20 and goes to value 0 and increament -4.
-else:
-    print("--------------")
-for y in "apple":
-    print(y)  # it will print each alphabet.
-else:
-    print("--------------")
+    print(x)  # 0 to 4
 ```
 
-***Example***
+### 7.3 break, continue, pass
 
 ```python
-# print only odd numbers in a range
-for z in range(10):
-    if z%2==0:
+for n in range(10):
+    if n == 3:
         continue
-    else:
-        print(z)
-else:
-    print("--------------")
-```
-# Functions
-
-- In python we don't have to define return type and function type.
-- use only `def` and it handles all automatically.
-- Functions can send data back to the code that called them using the `return` statement.
-- When a function reaches a `return` statement, it stops executing and sends the result back.
-- If a function doesn't have a `return` statement, it returns `None` by default.
-- You can assign default values to parameters. If the function is called without an argument, it uses the default value.
-- By default, a function must be called with the correct number of arguments.
-- You can send arguments with the `key = value syntax.` This way, with keyword arguments, the order of the arguments does not matter.
-- When you call a function with arguments without using keywords, they are called positional arguments.
-- You can send any data type as an argument to a function (string, number, list, dictionary, etc.).
-- Functions can `return` any data type, including lists, tuples, dictionaries, and more.
-- In position argument u have to keep in mind the order.
-- sometimes you may not know how many arguments that will be passed into your function.
-- `*args` and `**kwargs` allow functions to accept a unknown number of arguments.
-- If you do not know how many arguments will be passed into your function, add a `*`before the parameter name. then it recives a tuple of arguments and can be access accordingly.
-- You can combine regular parameters with `*args`.
-- Regular parameters must come before `*args`.
-- If you do not know how many keyword arguments will be passed into your function, add two asterisks `**` before the parameter name.
-- This way, the function will receive a dictionary of arguments and can access the items accordingly
-- You can combine regular parameters with `**kargs`.
-- Regular parameters must come before `**kargs`.
-- You can use both `*args` and `**kwargs` in the same function.
-
-*The order must be:*
-
-1. regular parameters
-2. *args
-3. **kwargs
-- Use `*` and `**` in function definitions to collect arguments, and use them in function calls to unpack arguments.
-
-```python
-print("function")
-def add(a,b):
-    return a+b
-print(add(3,5))
-# Default argument
-def greet(name,msg="Hello!"):
-    print(f"{msg}, {name}")
-greet("void")
-greet("void","konichiba!") # now it overrides the default msg
-# keyword argument
-def info(name,occupation):
-    print(f"so this is {name} who is {occupation}")
-info(name="void",occupation="developer")
-# position argument
-info("hi void","web dev")
-# *args
-def my_function(greeting, *names):
-  for name in names:
-    print(greeting, name)
-
-my_function("Hello", "Emil", "Tobias", "Linus")
-# **kargs
-def my_Function(username, **details):
-  print("Username:", username)
-  print("Additional details:")
-  for key, value in details.items():
-    print(" ", key + ":", value)
-
-my_Function("emil123", age = 25, city = "Oslo", hobby = "coding")
+    if n == 8:
+        break
+    print(n)
 ```
 
-**Recursion**
-- Recursion is when a function calls itself.
-- It is it self acts like a loop in function.
-- Every recursive function must have two parts:
+### 7.4 Loop else
 
-- A `recursive case` - The function calling itself with a modified argument
-- A `base case` - A condition that stops the recursion
-- 
-- Python has a limit on how deep recursion can go. The default limit is usually around 1000 recursive calls.
-- If you need deeper recursion, you can increase the limit, but be careful as this can cause crashes
+`else` runs if loop ends normally (not with `break`).
+
+## 8. Functions
+
+### 8.1 Defining and Calling
 
 ```python
-print("Recursion")
+def add(a, b):
+    return a + b
 
+print(add(2, 3))
+```
+
+### 8.2 Parameters
+
+- Positional arguments
+- Keyword arguments
+- Default parameters
+- Variable-length args: `*args`, `**kwargs`
+
+```python
+def intro(name, city="Unknown"):
+    print(name, city)
+```
+
+### 8.3 Scope
+
+- Local scope
+- Global scope (`global` keyword)
+- LEGB rule (Local, Enclosing, Global, Built-in)
+
+### 8.4 Lambda Functions
+
+```python
+square = lambda x: x * x
+print(square(5))
+```
+
+### 8.5 Recursion
+
+```python
 def factorial(n):
-  # Base case
-  if n == 0 or n == 1:
-    return 1
-  # Recursive case
-  else:
+    if n <= 1:
+        return 1
     return n * factorial(n - 1)
-
-print(factorial(5))
-# it is for check the limit of recursion
-import sys
-print(sys.getrecursionlimit())
-sys.setrecursionlimit(2000) # this code extend the calls to 2000.
 ```
-# Lists
 
-- it kind of a dynamic array. It grows and shrinks automatically. no need to declare the size.
-- We can store multiple data type in one list.
-- It can be empty list.
+## 9. Strings
+
+- Immutable sequence of characters
+- Supports indexing and slicing
 
 ```python
-num=[1,2,3,4,5] #dynamic size
-mixed=[1,"hello",2,3]
-empty=[]
+text = "Python"
+print(text[0])      # P
+print(text[1:4])    # yth
+print(text[::-1])   # nohtyP
 ```
-- List items are ordered, changeable, and allow duplicate values.
-- List items are indexed, the first item has index `[0]`, the second item has index `[1]` etc.
-- To determine how many items a list has, use the `len()` function.
-- we can count no. of occurance in a list with the help of `.count()` method.
+
+Common methods:
+- `upper()`, `lower()`, `title()`, `strip()`
+- `split()`, `join()`
+- `find()`, `replace()`
+- `startswith()`, `endswith()`
+
+## 10. Lists
+
+- Ordered, mutable, allows duplicates
 
 ```python
-print(len(num))
-print(type(num))
-print(num.count(6))
+nums = [1, 2, 3]
+nums.append(4)
+nums.insert(1, 10)
+nums.remove(2)
 ```
-- Python has negative indexing which starts from `[-1]`. It means the last element of the list.
+
+### 10.1 Slicing
 
 ```python
-print(num[1])
-print(num[-1])
+arr = [10, 20, 30, 40, 50]
+print(arr[1:4])   # [20, 30, 40]
 ```
-**Slicing**
-- where it gets powerful.
-- the pattern is `[start:stop:step]`.
+
+### 10.2 List Comprehension
 
 ```python
-fruits=["apple","guava","banana","grape","mango"]
-print(fruits[1:4]) # prints index 1 to 3
-print(fruits[:5]) # print from start to 4 no. index
-print(fruits[:]) # prints whole list
-print(fruits[::2]) # prints with two increament in index
-print(fruits[::-1]) # Reversed list print
+squares = [x * x for x in range(6)]
 ```
-**Modifying**
-- To insert a new list item, without replacing any of the existing values, we can use the `insert()` method.
-- To add an item to the end of the list, use the `append()` method.
-- To append elements from another list to the current list, use the `extend()` method.
-- The `remove()` method removes the specified item.
-- If there are more than one item with the specified value, the `remove()` method removes the first occurrence.
-- The `pop()` method removes the specified index and return the value and we can save it in a variable. *If you do not specify the index, the `pop()` method removes the last item.*
-- The `del` keyword also removes the specified index but it throws away the value forever.*The `del` keyword can also delete the list completely.*
-- The `clear()` method empties the list.
+
+### 10.3 Sorting and Copying
+
+- Sort: `sort()`, `sorted()`
+- Reverse: `reverse()`
+- Copy: `copy()`, slicing `[:]`, `list(original)`
+
+## 11. Tuples
+
+- Ordered, immutable, allows duplicates
 
 ```python
-# modification
-nums=[1,2,3,9,4,6,85,8,96,5,89,56]
-
-print(nums)
-print(len(nums))
-
-nums.append(100)
-print(nums)
-print(len(nums))
-
-nums.insert(1,10)
-print(nums)
-print(len(nums))
-
-nums.remove(56)
-print(nums)
-print(len(nums))
-
-remove_item=nums.pop(11)
-print(nums)
-print(len(nums))
-print(remove_item)
-
-# nums.pop()
-# print(nums)  # it will remove the last element of the list
-# print(len(nums))
-
-del nums[11]
-print(nums)
-print(len(nums))
-
-nums.clear()
-print(nums)
-print(len(nums))
-
+point = (10, 20)
 ```
-**List comprehension**
-- A list comprehension builds a new list in a single readable line.
-- The pattern: `[expression for item in iterable if condition]`.
+
+### 11.1 Packing and Unpacking
 
 ```python
-# List comprehension
-ums=[85,8,96,5,89,56]
-square=[x ** 2 for x in ums]
-print(square)
+person = ("Alex", 25, "India")
+name, age, country = person
 ```
-- We can nest them — useful for 2D grids (replaces nested loops).
-`table = [[i * j for j in range(1, 6)] for i in range(1, 6)]`
 
-**Sort list**
-- List objects have a sort() method that will sort the list alphanumerically, ascending, by default.
-- To sort descending, use the keyword argument `reverse = True`      
-- We can also customize your own function by using the keyword argument `key = function`.
-- The `key` parameter is one of the most powerful features in Python sorting. It allows you to tell Python how to compare items,rather than just using their default value.
-- The `reverse()` method reverses the current sorting order of the elements.
-- By default the `sort()` method is case sensitive, resulting in all capital letters being sorted before lower case letters.
-- Luckily we can use built-in functions as key functions when sorting a list.
-- So if we want a case-insensitive sort function, use `str.lower` as a key function.
+## 12. Dictionaries
+
+- Key-value mapping, mutable, insertion-ordered
 
 ```python
-# sort list
-numb=[2,8,9,6,4,1,0,6]
-print(numb)
-print(len(numb))
-
-numb.sort()
-print(numb)
-
-numb.sort(reverse=True)
-print(numb)
-
-numb=[2,8,9,6,4,1,0,6]
-numb.reverse()
-print(numb)
-
-def get(n):
-    return abs(n-10)
-
-numm=[5,7,8,9,24,9,2,5]
-print(numm)
-
-numm.sort(key=abs) # sort according to their absolute value
-print(numm)
-
-fruit=["apple","guava","banana","grape","mango"]
-fruit.sort(key=len) # sort according to their lengths
-print(fruit)
-
-numm.sort(key=get)
-print(numm)
-```
-**Copy list**
-- You cannot copy a list simply by typing `list2 = list1`, because: `list2` will only be a reference to `list1`, and changes made in `list1` will automatically also be made in `list2`.
-- You can use the built-in List method `copy()` to copy a list.
-- Another way to make a copy is to use the built-in method `list()`.
-- You can also make a copy of a list by using the `:` (slice) operator.
-
-```python
-cube=[x**3 for x in range(5)]
-print(cube,len(cube))
-
-c1=cube.copy()
-print(c1)
-
-c2=list(cube)
-print(c2)
-
-c3=cube[:]
-print(c3)
-```
-**Join lists**
-- One of the easiest ways are to join lists by using the `+` operator.
-- you can use the `extend()` method, where the purpose is to add elements from one list to another list.
-- we can use `append()` also.
-
-```python
-new_list=c1+cube
-print(new_list) #or
-
-cube.extend(c1)  #or
-print(cube)
-for x in c1:
-    cube.append(x)  
-print(cube)
-```
-# Tuples
-- Tuples are used to store multiple items in a single variable.
-- A tuple is a collection which is ordered and unchangeable.
-- Tuples are written with round brackets `()`.
-- Tuple items are ordered, unchangeable, and allow duplicate values.
-- The index is same as list or array.
-- When we say that tuples are ordered, it means that the items have a defined order, and that order will not change.
-- To determine how many items a tuple has, use the `len()` function.
-- To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
-- It is also possible to use the `tuple()` constructor to make a tuple.
-- accessing tuples is same as lists.
-```python
-print("Tuples")
-point=(2,3)
-print(point)
-mixed=(1,2,"apple",5)
-fruit=("apple","grape","mango","guaava")
-order=tuple((1,2,3))
-print(fruit,len(fruit),type(fruit))
-```
-**Update tuple**
-- we can't update tuples due to they are unchangable.
-- we can add two tuples.
-- it can be update via changing it into a list and covert it again tuple after update.
-- we can apply every list function and method after converted the tuples into lists.
-```python
-# update the tuple
-points=(2,5,6)
-
-y=list(points)
-print(y)
-y.append(5)
-y.insert(3,8)
-print(y)
-
-points=tuple(y)
-print(points)
-
-point=(2,3)
-points+=point
-print(points)
-```
-**Unpacking**
-- When we create a tuple, we normally assign values to it. This is called "packing" a tuple.
-- In Python, we are also allowed to extract the values back into variables. This is called "unpacking".
-- If the number of variables is less than the number of values, you can add an `*` to the variable name and the values will be assigned to the variable as a list.
-- *If the asterisk is added to another variable name than the last, Python will assign values to the variable until the number of values left matches the number of variables left.*
-
-```python
-# Unpacking
-num=(125,58,71)
-(r,g,b)=num
-print(r)
-print(g)
-print(b)
-
-cricket_player = ("Virat Kohli", "Batsman", "Right-hand bat", "India")
-print(cricket_player)
-(name,*details,country)=cricket_player
-print(name)
-print(details)
-print(country)
-```
-**Join tuples**
-- To join two or more tuples you can use the `+` operator.
-- If you want to multiply the content of a tuple a given number of times, you can use the `*` operator.
-```python
-#join two tuples
-tuple1=(1,2,3)
-tuple2=(4,5,6)
-
-new=tuple1+tuple2
-print(new)
-
-new1=tuple1*2
-print(new1)
-```
-# Dictionaries
-- Dictionaries are used to store data values in `key:value` pairs.
-- Dictionary items are ordered, changeable, and do not allow duplicates.
-- Dictionaries are written with curly brackets, and have keys and values.
-- They can be referred to by using the key name.
-- Dictionaries cannot have two items with the same key.
-- To determine how many items a dictionary has, use the `len()` function.
-- It is also possible to use the `dict()` constructor to make a dictionary.
-- You can access the items of a dictionary by referring to its key name, inside square brackets
-- There is also a method called `get()` that will help to access the dictionary.
-- The `keys()` method will return a list of all the keys in the dictionary.
-- The list of the keys is a view of the dictionary, meaning that any changes done to the dictionary will be reflected in the keys list.
-- The `values()` method will return a list of all the values in the dictionary.
-- The list of the values is a view of the dictionary, meaning that any changes done to the dictionary will be reflected in the values list.
-- The `items()` method will return each item in a dictionary, as tuples in a list.
-- The returned list is a view of the items of the dictionary, meaning that any changes done to the dictionary will be reflected in the items list.
-- To determine if a specified key is present in a dictionary use the `in` keyword.
-```python
-print("Dictionaries")
-
-student={
-    "name":"john",
-    "age":18,
-    "SGPA":8
-}
-empty={}
-also_empty=dict()
+student = {"name": "John", "age": 18}
 print(student["name"])
-
-student["name"]="alice"
-print(student["name"])
-print(len(student))
-print(type(student))
-
-new=dict(name="Dhoni",team="CSK")
-print(new["name"])
-
-x=new.get("team")
-print(x)
-
-#Before chnage
-x=new.keys()
-print(x)
-
-#after change
-new["num"]=7
-x=new.keys()
-print(x)
-
-#Before chnage
-x=new.values()
-print(x)
-
-#after change
-new["num"]=7.0
-x=new.values()
-print(x)
-
-print(new.items())
-
-if "num" in new:
-    print("YES")
-```
-**Modification**
-- You can change the value of a specific item by referring to its key name
-- The `update()` method will update the dictionary with the items from the given argument.
-- The argument must be a dictionary, or an iterable object with `key:value` pairs.
-- Adding an item to the dictionary is done by using a new index key and assigning a value to it.
-- The `update()` method will update the dictionary with the items from a given argument. If the item does not exist, the item will be added.
-- The `pop()` method removes the item with the specified key name.
-- The `popitem()` method removes the last inserted item (in versions before 3.7, a random item is removed instead).
-- The `del` keyword removes the item with the specified key name.
-- The `clear()` method empties the dictionary.
-```python
-# Modification
-detail={
-    "name":"adam",
-    "age":18,
-    "ID":152858,
-    "Region":"USA"
-}
-print(detail)
-
-detail.update({"age":24})
-print(detail)
-
-detail["Hobby"]="Gaming"
-print(detail)
-
-detail.update({"Occupation":"Student"})
-print(detail)
-
-detail.pop("Occupation")
-print(detail)
-
-detail.popitem()
-print(detail)
-
-del detail["ID"]
-print(detail)
-
-detail.clear()
-print(detail)
-```
-**Copy dictionaries**
-- You cannot copy a dictionary simply by typing `dict2 = dict1`, because: `dict2` will only be a reference to `dict1`, and changes made in dict1 will automatically also be made in `dict2`.
-- There are ways to make a copy, one way is to use the built-in Dictionary method `copy()`.
-- Another way to make a copy is to use the built-in function `dict()`.
-```python
-#Copy dict
-thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
-}
-
-mydict = thisdict.copy()
-print(mydict)
-
-new_dict=dict(thisdict)
-print(new_dict)
-```
-**Nested**
-- A dictionary can contain dictionaries, this is called nested dictionaries.
-- To access items from a nested dictionary, you use the name of the dictionaries, starting with the outer dictionary.
-`print(myfamily["child2"]["name"])`
-- You can loop through a dictionary by using the `items()` method like this.
-```python
-#nested
-myfamily = {
-  "child1" : {
-    "name" : "Emil",
-    "year" : 2004
-  },
-  "child2" : {
-    "name" : "Tobias",
-    "year" : 2007
-  },
-  "child3" : {
-    "name" : "Linus",
-    "year" : 2011
-  }
-}
-print(myfamily["child2"]["name"])
-
-for x, obj in myfamily.items():
-  print(x)
-
-  for y in obj:
-    print(y + ':', obj[y])
-```
-# Sets
-- Sets are used to store multiple items in a single variable, but unlike lists they are **unordered**, **unindexed**, and **do not allow duplicates**.
-- Sets are written with curly brackets `{}`.
-- Set items can appear in a different order every time you use them, and cannot be referred to by index or key.
-- Once a set is created, you cannot change its items, but you can add or remove items.
-- Duplicate values are silently ignored.
-
-```python
-# Creating sets
-fruits = {"apple", "banana", "cherry"}
-nums = {1, 2, 3, 3, 2}  # duplicates removed automatically
-print(nums)              # {1, 2, 3}
-print(len(fruits))
-
-# Check membership
-print("apple" in fruits)
-
-# Add / remove
-fruits.add("mango")
-fruits.discard("banana")  # safe: no error if item doesn't exist
-fruits.remove("cherry")   # raises KeyError if not found
-
-# Set operations
-a = {1, 2, 3, 4}
-b = {3, 4, 5, 6}
-print(a | b)   # union             → {1, 2, 3, 4, 5, 6}
-print(a & b)   # intersection      → {3, 4}
-print(a - b)   # difference        → {1, 2}
-print(a ^ b)   # symmetric diff    → {1, 2, 5, 6}
+student["age"] = 19
 ```
 
-# Strings
-- Strings are **immutable** — you can read but not modify in place.
-- We can write strings with `'` or `"`.
-- Since strings are sequences, everything from the lists lesson applies directly — especially slicing.
-```python
-a = "hello"
-b = 'world'
-print(a + " " + b)
+Useful methods:
+- `get()`, `keys()`, `values()`, `items()`
+- `update()`, `pop()`, `popitem()`, `clear()`
 
-print(a[2])
-for x in a:
-    print(x)
+## 13. Sets
 
-# Slicing
-greet = "Hello,World!"
-print(greet[2:6])
-print(greet[2:9])
-print(greet[:6])
-print(greet[2:6:2])
-print(greet[::3])
-print(greet[:])
-print(greet[::-1])
-```
-**Methods**
-- `upper()` — all uppercase characters.
-- `lower()` — all lowercase characters.
-- `capitalize()` — only the first letter uppercase.
-- `title()` — first letter of every word uppercase.
-- `swapcase()` — swaps case of every character.
-- `find()` — searches for a substring; returns -1 if not found.
-- `index()` — returns the index of the first match; raises `ValueError` if not found.
-- `startswith()`, `endswith()`, `isdigit()` — boolean checks.
-- `strip()` — removes leading and trailing whitespace.
-- `split()` — splits string into a list by a separator.
-- `replace(old, new)` — returns a **new** string; must reassign since strings are immutable.
-- `zfill(width)` — pads with leading zeros.
+- Unordered, unique elements
 
 ```python
-# Methods
-s = "hello,arbaa"
-print(s)
-
-print(s.upper())
-print(s.index("l"))
-
-# ⚠️ replace() returns a NEW string — must reassign!
-s = s.replace("l", "v")
-print(s)  # "hevvo,arbaa"
-```
-# File Handling
-- File handling is an important part of any web application.
-- Python has several functions for creating, reading, updating, and deleting files.
-- The key function for working with files in Python is the `open()` function.
-- The `open()` function takes two parameters; filename, and mode.
-- `"r"` - Read - Default value. Opens a file for reading, error if the file does not exist.
-- `"a"` - Append - Opens a file for appending, creates the file if it does not exist.
-- `"w"` - Write - Opens a file for writing, creates the file if it does not exist.
-- `"x"` - Create - Creates the specified file, returns an error if the file exists.
-- `"t"` - Text - Default value. Text mode.
-- `"b"` - Binary - Binary mode (e.g. images).
-**Read a file**
-- Because `"r"` for read, and `"t"` for text are the default values, you do not need to specify them.
-- To read again from the start, you must reset the cursor using `f.seek(0)`.
-- Use `f.close()` to close the file every time you open it if you are not using the `with` statement.
-- You can also use the `with` statement when opening a file — it closes the file automatically.
-
-```python
-# Read a file
-f = open("files.txt")
-print(f.read())
-f.seek(0)
-print(f.readline())
-f.seek(0)
-print(f.readlines(), type(f.readlines()))
-f.close()
-
-with open("files.txt") as f:
-    print(f.read())
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a | b)  # union
+print(a & b)  # intersection
+print(a - b)  # difference
 ```
 
-**Write a file**
+## 14. File Handling
+
+Use `with` to manage files safely.
 
 ```python
-# Append to a file
-with open("files.txt", "a") as f:
-    f.write("now a line.")
+with open("files.txt", "r", encoding="utf-8") as f:
+    data = f.read()
 
-with open("files.txt") as f:
-    print(f.read())
-
-# Overwrite a file
-with open("files.txt", "w") as f:  # overwrites the file content
-    f.write("hmmm")
-
-with open("files.txt") as f:
-    print(f.read())
+with open("files.txt", "a", encoding="utf-8") as f:
+    f.write("\nNew line")
 ```
 
-**Create and Remove a file**
-- To delete a file, you must import the OS module, and run its `os.remove()` function.
-- To delete an entire folder, use the `os.rmdir()` method.
-- To avoid getting an error, check if the file exists before deleting:
+Modes:
+- `r`: read
+- `w`: write (overwrite)
+- `a`: append
+- `x`: create new file
+- `b`: binary mode
+- `t`: text mode (default)
+
+## 15. Error Handling
 
 ```python
-import os
-
-if os.path.exists("demofile.txt"):
-    os.remove("demofile.txt")
+try:
+    x = int(input("Enter a number: "))
+except ValueError:
+    print("Invalid input")
 else:
-    print("The file does not exist")
+    print("Valid number", x)
+finally:
+    print("Always executes")
 ```
-- `"x"` - Create - will create a file, returns an error if the file exists.<br>
-`f = open("myfile.txt", "x")`
 
-# OOP (Object-Oriented Programming)
+Use `raise` to throw custom exceptions.
 
-- OOP is a programming paradigm that organizes code around **objects** — bundles of data (attributes) and behaviour (methods).
-- Python supports four core OOP principles: **Encapsulation**, **Inheritance**, **Polymorphism**, and **Abstraction**.
-- A **class** is a blueprint; an **object** is an instance of that blueprint.
-- Use `self` to refer to the current instance inside a class.
-- `__init__()` is the constructor — it runs automatically when an object is created.
+## 16. Object-Oriented Programming (OOP)
 
-> 📝 *This section is a work in progress — `oop.py` coming soon!*
+Core ideas:
+- Class and object
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Abstraction
 
 ```python
-# Defining a class
-class Dog:
-    def __init__(self, name, breed):
-        self.name = name      # instance attribute
-        self.breed = breed
+class Animal:
+    def speak(self):
+        print("Animal sound")
 
-    def bark(self):           # instance method
-        print(f"{self.name} says: Woof!")
-
-
-# Creating objects (instances)
-d1 = Dog("Bruno", "Labrador")
-d2 = Dog("Max", "Beagle")
-
-d1.bark()   # Bruno says: Woof!
-print(d2.name)
-
-# Inheritance
-class GuideDog(Dog):
-    def __init__(self, name, breed, owner):
-        super().__init__(name, breed)   # call parent constructor
-        self.owner = owner
-
-    def guide(self):
-        print(f"{self.name} is guiding {self.owner}.")
-
-
-g = GuideDog("Buddy", "Golden Retriever", "Alice")
-g.bark()    # inherited from Dog
-g.guide()
+class Dog(Animal):
+    def speak(self):
+        print("Woof")
 ```
+
+## 17. Modules, Packages, and pip
+
+- Module: a Python file (`.py`) with code.
+- Package: a directory of modules (usually with `__init__.py`).
+- Install libraries with `pip`.
+
+```bash
+pip install requests
+```
+
+```python
+import math
+print(math.sqrt(25))
+```
+
+## 18. Useful Built-in Functions
+
+Important built-ins to master:
+- `len()`, `type()`, `id()`
+- `sum()`, `min()`, `max()`, `sorted()`
+- `range()`, `enumerate()`, `zip()`
+- `map()`, `filter()`, `any()`, `all()`
+- `abs()`, `round()`
+
+## 19. Intermediate Python Topics
+
+### 19.1 Iterators and Generators
+
+```python
+def count_up_to(n):
+    i = 1
+    while i <= n:
+        yield i
+        i += 1
+```
+
+### 19.2 Comprehensions
+
+- List comprehension
+- Dictionary comprehension
+- Set comprehension
+
+```python
+squares = {x: x * x for x in range(5)}
+```
+
+### 19.3 Decorators
+
+Decorators wrap and extend function behavior.
+
+### 19.4 Context Managers
+
+`with` statements and custom context managers for safe resource handling.
+
+### 19.5 Dataclasses
+
+Use `@dataclass` to reduce boilerplate for classes storing data.
+
+## 20. Advanced Python Topics
+
+- Virtual environments (`venv`)
+- Type hints and static checking (`typing`, `mypy`)
+- Testing with `unittest` and `pytest`
+- Logging with `logging` module
+- Regular expressions (`re`)
+- Concurrency:
+  - `threading`
+  - `multiprocessing`
+  - `asyncio`
+- Performance basics and profiling
+- Packaging and publishing (`setuptools`, `pyproject.toml`)
+
+## 21. Coding Best Practices
+
+- Follow PEP 8 style guidelines.
+- Write meaningful variable/function names.
+- Keep functions small and single-purpose.
+- Add docstrings for reusable code.
+- Handle exceptions intentionally.
+- Prefer readability over clever tricks.
+- Write tests for critical logic.
+
+## 22. Learning Path (Recommended Order)
+
+1. Syntax, variables, data types, I/O
+2. Operators and conditionals
+3. Loops and control statements
+4. Functions and recursion
+5. Strings, lists, tuples, dicts, sets
+6. File handling and exceptions
+7. OOP
+8. Modules, packages, and external libraries
+9. Intermediate features (generators, decorators, dataclasses)
+10. Testing, typing, async/concurrency, packaging
+
+## 23. Repository Topic Map
+
+This repository already includes practice files for many fundamentals:
+
+- Variables: `var.py`, `varq.py`
+- Input/Output: `i_o.py`
+- Operators: `operators_q.py`
+- Conditionals: `conditional.py`, `control_flow_q.py`
+- Loops: `loops.py`
+- Functions: `functions.py`, `functionq.py`
+- Recursion: `recusion.py`
+- Strings: `strings.py`, `stringq.py`
+- Lists: `lists.py`
+- Tuples: `tuples.py`
+- Dictionaries: `dict.py`
+- Sets: `sets.py`
+- File handling: `file_i_o.py`, `files.txt`
+- Command notes: `commands.txt`
+
+## 24. Practice Strategy
+
+For each topic:
+1. Read concept + syntax
+2. Run examples manually
+3. Modify examples with your own inputs
+4. Solve at least 5 small exercises
+5. Build one mini-project per 3-4 topics
+
+Mini-project ideas:
+- Calculator app (I/O, conditionals, loops, functions)
+- Student grade manager (lists/dicts/functions/files)
+- Expense tracker (file handling + data structures)
+- CLI contact book (CRUD with dictionaries and files)
+
+## 25. Quick Revision Checklist
+
+- Can you explain mutable vs immutable types?
+- Can you use slicing and comprehensions confidently?
+- Do you know when to use list vs tuple vs set vs dict?
+- Can you write reusable functions with proper parameters?
+- Can you handle errors using `try/except`?
+- Can you read/write files safely with `with open(...)`?
+- Can you create and use classes with inheritance?
+- Can you import modules and install packages?
+
+## 26. Next Milestones
+
+After finishing this repository, continue with:
+- DSA in Python (arrays, strings, stacks, queues, trees, graphs)
+- API development with FastAPI/Flask
+- SQL + Python integration
+- Testing and CI workflows
+- One portfolio project end-to-end
+
+## 27. Advanced Python and Ecosystem Map
+
+### 27.1 Advanced Python Topics to Learn
+
+- Memory model and internals: references, mutability, garbage collection
+- Iteration protocol: iterables, iterators, custom iterator classes
+- Generators: `yield`, generator expressions, lazy pipelines
+- Decorators in depth: function decorators, class decorators, `functools.wraps`
+- Context managers: `with`, custom context managers, `contextlib`
+- Descriptors and properties: `property`, descriptor protocol
+- Dunder methods: `__str__`, `__repr__`, `__len__`, `__iter__`, operator overloading
+- Dataclasses and attrs-style modeling
+- Type hints: `typing`, `TypeVar`, `Generic`, `Protocol`, `TypedDict`
+- Async programming: event loop, coroutines, `async`/`await`, async context managers
+- Concurrency patterns: threads vs processes vs async I/O
+- Testing architecture: unit, integration, mocking, fixtures, parametrization
+- Packaging and distribution: wheels, versioning, `pyproject.toml`, publishing
+- Performance tuning: profiling, caching, vectorization, memory optimization
+
+### 27.2 Web Development
+
+- Django: full-featured web framework with ORM, auth, admin, templating
+- Flask: lightweight microframework for APIs and small web apps
+- FastAPI: modern high-performance API framework with type hints and auto docs
+- SQLAlchemy: powerful ORM and SQL toolkit
+- Alembic: database migrations for SQLAlchemy projects
+- Pydantic: runtime data validation and schema modeling
+- Celery: background task queue and distributed workers
+
+### 27.3 Data Analysis and Visualization
+
+- NumPy: n-dimensional arrays and numerical computing foundation
+- Pandas: tabular data processing, cleaning, and analysis
+- Polars: high-performance DataFrame engine for large datasets
+- Matplotlib: core plotting library
+- Seaborn: statistical visualization with simpler high-level APIs
+- Plotly: interactive plots and dashboards
+
+### 27.4 AI and Machine Learning
+
+- scikit-learn: classical ML models, preprocessing, and evaluation
+- XGBoost: gradient boosting for structured/tabular data
+- LightGBM: efficient gradient boosting for large datasets
+- CatBoost: boosting library strong with categorical features
+- PyTorch: deep learning framework with dynamic computation graphs
+- TensorFlow/Keras: deep learning framework and high-level APIs
+- Hugging Face Transformers: pre-trained NLP and multimodal transformer models
+- Optuna: hyperparameter optimization and experiment tuning
+
+### 27.5 Data Engineering and Big Data
+
+- Apache Spark (PySpark): distributed data processing and ETL at scale
+- Dask: parallel/distributed arrays and DataFrames in Python
+- Airflow: workflow orchestration and scheduled pipelines
+- Prefect: modern workflow orchestration with Python-first design
+- dbt (Python ecosystem integration): analytics engineering and SQL transformations
+
+### 27.6 Cybersecurity and Networking
+
+- Scapy: packet crafting, sniffing, and protocol analysis
+- Requests: HTTP client for scripts and security tooling
+- httpx: modern sync/async HTTP client
+- Paramiko: SSH automation and remote command execution
+- pwntools: exploit development and binary interaction toolkit
+- cryptography: secure encryption, signing, and key operations
+- python-nmap: integration with Nmap scanning results
+- YARA Python bindings: malware pattern matching workflows
+
+### 27.7 Automation, DevOps, and System Scripting
+
+- subprocess and pathlib (standard library): process control and filesystem automation
+- Fabric: remote execution and deployment scripting over SSH
+- Ansible (Python ecosystem): infrastructure automation and configuration management
+- Click/Typer: building robust command-line applications
+- Rich/Textual: rich terminal UI, logs, tables, and interactive CLIs
+
+### 27.8 Testing, Quality, and Tooling
+
+- pytest: modern testing framework with fixtures and plugins
+- unittest: standard library testing framework
+- hypothesis: property-based testing
+- mypy/pyright: static type checking
+- ruff/flake8/pylint: linting and code quality rules
+- black: automatic code formatter
+- isort: import sorting and formatting
+- pre-commit: run quality checks before each commit
+
+### 27.9 Desktop, Bots, and Other Domains
+
+- Tkinter/PySide/PyQt: desktop GUI applications
+- Selenium/Playwright: browser automation and web testing
+- BeautifulSoup/lxml: HTML parsing and web scraping
+- Scrapy: scalable scraping framework
+- python-telegram-bot/discord.py: chatbots and community automation
+
+### 27.10 How to Choose a Stack by Goal
+
+- For backend/API: FastAPI + SQLAlchemy + Alembic + Pydantic
+- For data analysis: NumPy + Pandas + Matplotlib/Seaborn
+- For ML projects: Pandas + scikit-learn + Optuna, then PyTorch
+- For cybersecurity scripting: Requests/httpx + Scapy + Paramiko + cryptography
+- For automation tools: Typer + Rich + subprocess + pathlib
+
+---
+
+Every line you debug is proof your hard work is turning into skill. 😊
